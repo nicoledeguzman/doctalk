@@ -1,3 +1,14 @@
+import PhysicianApps from './PhysicianApps.js';
+import OrganizationApps from './OrganizationApps.js';
+import AppIdeas from './AppIdeas.js';
+import Support from './Support.js';
+import MedTraineeApps from './MedTraineeApps.js';
+import About from './About.js';
+import News from './News.js';
+import Careers from './Careers.js';
+import Partners from './Partners.js';
+import Contact from './Contact.js';
+
 import './App.css';
 import logo from './logo-doctalk.png';
 
@@ -12,6 +23,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        
         <header>
           <img src={logo} alt="doctalk logo"/>
           <nav>
@@ -49,6 +61,43 @@ function App() {
           </nav>
           <a href="">Log In</a>
         </header>
+
+        <main>
+          <Switch>
+            {/* links in header nav */}
+            <Route path="/physician-apps">
+              <PhysicianApps />
+            </Route>
+            <Route path="/app-ideas">
+              <AppIdeas />
+            </Route>
+            <Route path="/support">
+              <Support />
+            </Route>
+            <Route path="/organization-apps">
+              <OrganizationApps />
+            </Route>
+            <Route path="/med-trainee-apps">
+              <MedTraineeApps />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/news">
+              <News />
+            </Route>
+            <Route path="/careers">
+              <Careers />
+            </Route>
+            <Route path ="/partners">
+              <Partners />
+            </Route>
+            <Route path="/contact">
+              <Contact />
+            </Route>
+          </Switch>
+        </main>
+
       </div>
     </ Router>
   );
