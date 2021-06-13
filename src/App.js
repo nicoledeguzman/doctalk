@@ -8,6 +8,10 @@ import News from './News.js';
 import Careers from './Careers.js';
 import Partners from './Partners.js';
 import Contact from './Contact.js';
+import PrivacyPolicy from './PrivacyPolicy';
+import TermsOfService from './TermsOfService.js';
+import CodeOfConduct from './CodeOfConduct';
+import RequestDemo from './RequestDemo.js';
 
 import './App.css';
 import logo from './logo-doctalk.png';
@@ -23,10 +27,10 @@ function App() {
   return (
     <Router>
       <div className="App">
-        
+
         <header>
           <img src={logo} alt="doctalk logo"/>
-          <nav>
+          <nav className="header-nav">
             <button className="menu">nav</button>
             <ul>
               <li><p>Physicians</p>
@@ -95,8 +99,32 @@ function App() {
             <Route path="/contact">
               <Contact />
             </Route>
+            {/* links in footer nav */}
+            <Route path="/privacy-policy">
+              <PrivacyPolicy />
+            </Route>
+            <Route path="/terms-of-service">
+              <TermsOfService />
+            </Route>
+            <Route path="/code-of-conduct">
+              <CodeOfConduct />
+            </Route>
+            <Route path="/request-demo">
+              <RequestDemo />
+            </Route>
           </Switch>
         </main>
+
+        <footer>
+          <nav className="footer-nav">
+            <ul>
+              <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+              <li><Link to="/terms-of-service">Terms of Service</Link></li>
+              <li><Link to="/code-of-conduct">Code of Conduct</Link></li>
+              <li><Link to="/request-demo">Request a Demo</Link></li>
+            </ul>
+          </nav>
+        </footer>
 
       </div>
     </ Router>
