@@ -1,17 +1,18 @@
-import PhysicianApps from './PhysicianApps.js';
-import OrganizationApps from './OrganizationApps.js';
-import AppIdeas from './AppIdeas.js';
-import Support from './Support.js';
-import MedTraineeApps from './MedTraineeApps.js';
-import About from './About.js';
-import News from './News.js';
-import Careers from './Careers.js';
-import Partners from './Partners.js';
-import Contact from './Contact.js';
-import PrivacyPolicy from './PrivacyPolicy';
-import TermsOfService from './TermsOfService.js';
-import CodeOfConduct from './CodeOfConduct';
-import RequestDemo from './RequestDemo.js';
+import Home from './components/Home.js';
+import PhysicianApps from './components/PhysicianApps.js';
+import OrganizationApps from './components/OrganizationApps.js';
+import AppIdeas from './components/AppIdeas.js';
+import Support from './components/Support.js';
+import MedTraineeApps from './components/MedTraineeApps.js';
+import About from './components/About.js';
+import News from './components/News.js';
+import Careers from './components/Careers.js';
+import Partners from './components/Partners.js';
+import Contact from './components/Contact.js';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService.js';
+import CodeOfConduct from './components/CodeOfConduct';
+import RequestDemo from './components/RequestDemo.js';
 
 import './App.css';
 import logo from './logo-doctalk.png';
@@ -29,7 +30,7 @@ function App() {
       <div className="App">
 
         <header>
-          <img src={logo} alt="doctalk logo"/>
+          <Link to="/"><img src={logo} alt="doctalk logo"/></Link>
           <nav className="header-nav">
             <button className="menu">nav</button>
             <ul>
@@ -68,6 +69,9 @@ function App() {
 
         <main>
           <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
             {/* links in header nav */}
             <Route path="/physician-apps">
               <PhysicianApps />
